@@ -1,3 +1,5 @@
+import { Auth } from "aws-amplify";
+import React from "react";
 import { useState } from "react";
 import {
   Text,
@@ -17,6 +19,8 @@ const {setUserId} = useAuthContext();
   const {client} =useChatContext()
 
   const connectUser =async () =>{
+
+  
     await client.connectUser({
        id:username,
        name:name,

@@ -13,8 +13,10 @@ import {
 import { Text } from "react-native";
 import AuthContext from "./src/context/context";
 import { StreamColors } from "./src/constants/Colors";
-import {Amplify}from  "aws-amplify";
+import {Amplify, Auth}from  "aws-amplify";
 import awsconfig from './src/aws-exports';
+import {withAuthenticator} from 'aws-amplify-react-native';
+import React from "react";
 
 Amplify.configure(awsconfig)
 const API_KEY = "ptz8rweky3ab";
@@ -25,11 +27,12 @@ colors:StreamColors,
 
 }
 
-export default function App() {
+function App() {
   const isLoadingComplete = useCachedResources();
 
+  
   useEffect(() => {
-    //this is done when the component mounts
+    //this is done when the component mount
     return () => {
       //this is done when the component unmounts
       client.disconnectUser();
@@ -42,7 +45,7 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <AuthContext>
+        <AuthContext client={client}>
           <OverlayProvider value={{style:theme}}>
             <Chat client={client}>
               <Navigation colorScheme={"dark"} />
@@ -55,3 +58,4 @@ export default function App() {
     );
   }
 }
+export default withAuthenticator(App);

@@ -46,14 +46,7 @@ function RootNavigator() {
   const {userId }= useAuthContext();
   return (
     <Stack.Navigator>
-      {!userId ? (
-        <Stack.Screen
-          name="SignUpScreen"
-          component={SignUpScreen}
-          options={{ headerShown: false }}
-        />
-      ) : (
-        <>
+    
           <Stack.Screen
             name="Root"
             component={DrawerNavigator}
@@ -67,8 +60,6 @@ function RootNavigator() {
           <Stack.Group screenOptions={{ presentation: "modal" }}>
             <Stack.Screen name="Modal" component={ModalScreen} />
           </Stack.Group>
-        </>
-      )}
     </Stack.Navigator>
   );
 }

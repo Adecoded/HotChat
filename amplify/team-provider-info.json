@@ -14,6 +14,17 @@
     "categories": {
       "auth": {
         "HotChat": {}
+      },
+      "function": {
+        "getStreamToken": {
+          "streamKey": "ptz8rweky3ab",
+          "streamSecret": "8jx8cvn5zx2uty2rc9ya67j7trjf2q7sm6dh52fzqg5cyfev7uvqzbmhywn4faxy",
+          "deploymentBucketName": "amplify-hotchat-staging-210222-deployment",
+          "s3Key": "amplify-builds/getStreamToken-7555304758334b703142-build.zip"
+        }
+      },
+      "api": {
+        "hotchat": {}
       }
     }
   }
