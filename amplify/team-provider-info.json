@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hotchat-staging-210222-authRole",
+      "UnauthRoleArn": "arn:aws:iam::214943075816:role/amplify-hotchat-staging-210222-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::214943075816:role/amplify-hotchat-staging-210222-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hotchat-staging-210222-deployment",
+      "UnauthRoleName": "amplify-hotchat-staging-210222-unauthRole",
+      "StackName": "amplify-hotchat-staging-210222",
+      "StackId": "arn:aws:cloudformation:us-east-1:214943075816:stack/amplify-hotchat-staging-210222/d4b3ea60-4d95-11ed-876a-12132830c079",
+      "AmplifyAppId": "d29tkah5708lmu"
+    },
+    "categories": {
+      "auth": {
+        "HotChat": {}
+      }
+    }
+  }
+}
