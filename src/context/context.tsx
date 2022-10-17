@@ -26,6 +26,7 @@ const AuthContextComponent =({children,client}) =>{
             image:"https://i.imgur.com/fR9Jz14.png",
           },
           token
+          
           );
           
           const channel =client.channel("livestream","Game",{name:"Game"});
