@@ -13,6 +13,10 @@ import {
 import { Text } from "react-native";
 import AuthContext from "./src/context/context";
 import { StreamColors } from "./src/constants/Colors";
+import {Amplify}from  "aws-amplify";
+import awsconfig from './src/aws-exports';
+
+Amplify.configure(awsconfig)
 const API_KEY = "ptz8rweky3ab";
 const client = StreamChat.getInstance(API_KEY);
 
