@@ -7,7 +7,7 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.92"
   },
-  "dependencies": {
-    "stream-chat":"^8.0.0"
-  }
+"dependencies": {
+  "stream-chat": "8.0.0"
+}
 }

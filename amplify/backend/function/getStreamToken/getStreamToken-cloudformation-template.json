@@ -101,12 +101,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "hotchatLambdaRole214c7810",
+            "hotchatLambdaRole5eb3991a",
             {
               "Fn::Join": [
                 "",
                 [
-                  "hotchatLambdaRole214c7810",
+                  "hotchatLambdaRole5eb3991a",
                   "-",
                   {
                     "Ref": "env"

@@ -1,44 +1,40 @@
+import "react-native-gesture-handler";
+import "react-native-get-random-values";
+
+import { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
-import { useEffect} from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+
 import useCachedResources from "./src/hooks/useCachedResources";
 import Navigation from "./src/navigation";
-import { StreamChat } from "stream-chat";
-import {
-  OverlayProvider,
-  Chat,
-  DeepPartial,
-  Theme,
-} from "stream-chat-expo";
-import { Text } from "react-native";
-import AuthContext from "./src/context/context";
-import { StreamColors } from "./src/constants/Colors";
-import {Amplify, Auth}from  "aws-amplify";
-import awsconfig from './src/aws-exports';
-import {withAuthenticator} from 'aws-amplify-react-native';
-import React from "react";
 
-Amplify.configure(awsconfig)
+import { StreamChat } from "stream-chat";
+import { OverlayProvider, Chat, Theme, DeepPartial } from "stream-chat-expo";
+import AuthContext from "./src/contexts/AuthContext";
+import { StreamColors } from "./src/constants/Colors";
+import { Amplify, Auth } from "aws-amplify";
+import { withAuthenticator } from "aws-amplify-react-native";
+import awsconfig from "./src/aws-exports";
+
+Amplify.configure({ ...awsconfig, Analytics: { disabled: true } });
+
 const API_KEY = "ptz8rweky3ab";
 const client = StreamChat.getInstance(API_KEY);
 
-const theme: DeepPartial<Theme> ={
-colors:StreamColors,
-
-}
+const theme: DeepPartial<Theme> = {
+  colors: StreamColors,
+};
 
 function App() {
   const isLoadingComplete = useCachedResources();
 
-  
   useEffect(() => {
-    //this is done when the component mount
+    // this is done when component mounts
     return () => {
-      //this is done when the component unmounts
+      // this is done when component unmounts
       client.disconnectUser();
     };
   }, []);
-  
 
   if (!isLoadingComplete) {
     return null;
@@ -46,10 +42,9 @@ function App() {
     return (
       <SafeAreaProvider>
         <AuthContext client={client}>
-          <OverlayProvider value={{style:theme}}>
+          <OverlayProvider value={{ style: theme }}>
             <Chat client={client}>
               <Navigation colorScheme={"dark"} />
-        
             </Chat>
           </OverlayProvider>
         </AuthContext>
@@ -58,4 +53,5 @@ function App() {
     );
   }
 }
+
 export default withAuthenticator(App);

@@ -12,8 +12,11 @@
         ],
         "signupAttributes": [],
         "passwordProtectionSettings": {
-          "passwordPolicyMinLength": 10,
-          "passwordPolicyCharacters": []
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_UPPERCASE"
+          ]
         },
         "mfaConfiguration": "OFF",
         "mfaTypes": [

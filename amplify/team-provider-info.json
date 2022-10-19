@@ -1,15 +1,15 @@
 {
   "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-hotchat-staging-210222-authRole",
-      "UnauthRoleArn": "arn:aws:iam::214943075816:role/amplify-hotchat-staging-210222-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::214943075816:role/amplify-hotchat-staging-210222-authRole",
+      "AuthRoleName": "amplify-hotchat-staging-182812-authRole",
+      "UnauthRoleArn": "arn:aws:iam::214943075816:role/amplify-hotchat-staging-182812-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::214943075816:role/amplify-hotchat-staging-182812-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-hotchat-staging-210222-deployment",
-      "UnauthRoleName": "amplify-hotchat-staging-210222-unauthRole",
-      "StackName": "amplify-hotchat-staging-210222",
-      "StackId": "arn:aws:cloudformation:us-east-1:214943075816:stack/amplify-hotchat-staging-210222/d4b3ea60-4d95-11ed-876a-12132830c079",
-      "AmplifyAppId": "d29tkah5708lmu"
+      "DeploymentBucketName": "amplify-hotchat-staging-182812-deployment",
+      "UnauthRoleName": "amplify-hotchat-staging-182812-unauthRole",
+      "StackName": "amplify-hotchat-staging-182812",
+      "StackId": "arn:aws:cloudformation:us-east-1:214943075816:stack/amplify-hotchat-staging-182812/75836d40-4e49-11ed-ac19-12ea2fb7402b",
+      "AmplifyAppId": "d1cl4n84z1c2zb"
     },
     "categories": {
       "auth": {
@@ -19,8 +19,8 @@
         "getStreamToken": {
           "streamKey": "ptz8rweky3ab",
           "streamSecret": "8jx8cvn5zx2uty2rc9ya67j7trjf2q7sm6dh52fzqg5cyfev7uvqzbmhywn4faxy",
-          "deploymentBucketName": "amplify-hotchat-staging-210222-deployment",
-          "s3Key": "amplify-builds/getStreamToken-7555304758334b703142-build.zip"
+          "deploymentBucketName": "amplify-hotchat-staging-182812-deployment",
+          "s3Key": "amplify-builds/getStreamToken-317a447a5344506a375a-build.zip"
         }
       },
       "api": {

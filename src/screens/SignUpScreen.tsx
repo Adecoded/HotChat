@@ -1,5 +1,4 @@
 import { Auth } from "aws-amplify";
-import React from "react";
 import { useState } from "react";
 import {
   Text,
@@ -9,33 +8,42 @@ import {
   ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {useChatContext} from 'stream-chat-expo'
-import { useAuthContext } from "../context/context";
+import { useChatContext } from "stream-chat-expo";
+import { useAuthContext } from "../contexts/AuthContext";
+import Navigation from "../navigation";
+
 const SignUpScreen = () => {
-  const [username, setUsername] = useState("mich");
-  const [name, setName] = useState("mich");
+  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-const {setUserId} = useAuthContext();
-  const {client} =useChatContext()
+  const { setUserId } = useAuthContext();
 
-  const connectUser =async () =>{
+  const { client } = useChatContext();
 
-  
-    await client.connectUser({
-       id:username,
-       name:name,
-       image:"https://i.imgur.com/fR9Jz14.png",
-     },client.devToken(username), 
-     );
-     
-     const channel =client.channel("livestream","Game",{name:"Game"});
-     await channel.watch();
-      setUserId(username)
-   }
+  const connectUser = async () => {
+    // sign in with your backend and get the user token
 
+
+    await client.connectUser(
+      {
+        id: username,
+        name: name,
+        image:
+          "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png",
+      },
+      client.devToken(username)
+    );
+
+    const channel = client.channel("livestream", "public", { name: "Public" });
+    await channel.watch();
+
+    setUserId(username);
+  };
 
   const signUp = () => {
     connectUser();
+
+    // navigate to the home page
   };
 
   return (

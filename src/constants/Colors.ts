@@ -17,6 +17,7 @@ export default {
     tabIconSelected: tintColorDark,
   },
 };
+
 export const StreamColors = {
   accent_blue: "#005FFF",
   accent_green: "#20E070",
